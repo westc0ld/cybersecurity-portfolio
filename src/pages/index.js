@@ -7,7 +7,7 @@ export default function Home() {
     <Layout>
       <TerminalBackground />
       <div className="body">
-        <section id="chat" style={{ paddingTop: "90px", paddingBottom: "120px", position: "relative", zIndex: 1 }}>
+        <section id="chat" style={{ paddingTop: "40px", paddingBottom: "20px", position: "relative", zIndex: 1 }}>
           <ChatGPT />
         </section>
       </div>

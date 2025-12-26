@@ -147,11 +147,14 @@ const ChatGPT = () => {
                         </div>
                     )}
                     <div className="chat-history" ref={chatHistoryRef}>
-                        {chatHistory.map((message, index) => (
-                            <div key={index} className={`message ${message.sender}`}>
-                                {message.text}
-                            </div>
-                        ))}
+                        {chatHistory.map((message, index) => {
+                            const isError = message.text?.startsWith('[ERROR]');
+                            return (
+                                <div key={index} className={`message ${message.sender} ${isError ? 'error-message' : ''}`}>
+                                    {message.text}
+                                </div>
+                            );
+                        })}
                         {(chatHistory.length === 0) && (
                             <div className="messagebot">
                                 <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
@@ -180,7 +183,9 @@ const ChatGPT = () => {
                         <button onClick={sendMessage}>EXECUTE</button>
                     </div>
                     </div>
-                    <div className="monitor-stand"></div>
+                    <div className="monitor-stand">
+                        <div className="monitor-stand-base"></div>
+                    </div>
                 </div>
                 <div className="warning">
                     * WARNING: 최대 10개의 쿼리만 허용됩니다<br />

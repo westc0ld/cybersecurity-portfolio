@@ -35,20 +35,20 @@ const TerminalBackground = () => {
         // 초기 라인 생성 함수
         const initializeLines = () => {
             lines.length = 0; // 기존 라인 제거
-            const maxLines = Math.floor(window.innerHeight / lineHeight);
+        const maxLines = Math.floor(window.innerHeight / lineHeight);
             const columns = Math.ceil(window.innerWidth / columnWidth) + 1; // 화면 전체를 채우기 위해 +1
-            
-            for (let col = 0; col < columns; col++) {
-                for (let i = 0; i < maxLines; i++) {
-                    lines.push({
-                        text: commands[Math.floor(Math.random() * commands.length)],
+
+        for (let col = 0; col < columns; col++) {
+            for (let i = 0; i < maxLines; i++) {
+                lines.push({
+                    text: commands[Math.floor(Math.random() * commands.length)],
                         x: 20 + (col * columnWidth) + Math.random() * 50,
-                        y: (i + 1) * lineHeight + Math.random() * 100,
-                        opacity: Math.random() * 0.15 + 0.05, // 매우 흐릿하게
-                        speed: Math.random() * 0.3 + 0.2,
-                    });
-                }
+                    y: (i + 1) * lineHeight + Math.random() * 100,
+                    opacity: Math.random() * 0.15 + 0.05, // 매우 흐릿하게
+                    speed: Math.random() * 0.3 + 0.2,
+                });
             }
+        }
         };
 
         initializeLines();
