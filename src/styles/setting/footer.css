@@ -1,0 +1,112 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  height: 100px;
+  border-top: 2px solid rgba(0, 255, 65, 0.3);
+  box-shadow: 0 -4px 20px rgba(0, 255, 65, 0.15);
+  z-index: 10000;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.footer .container .copy {
+  display: flex;
+  justify-content: center;
+  color: #00ff41; /* 형광 초록색 */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+.footer .container .logo {
+  display: flex;
+  justify-content: center;
+}
+
+.footer .container .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer .container .logo .icon-button {
+  background: rgba(0, 255, 65, 0.1);
+  border: 2px solid rgba(0, 255, 65, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer .container .logo .icon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.footer .container .logo .icon-button:hover::before {
+  left: 100%;
+}
+
+.footer .container .logo .icon-button:hover {
+  transform: translateY(-5px) scale(1.1);
+  border-color: rgba(0, 255, 65, 0.8);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
+  background: rgba(0, 255, 65, 0.2);
+}
+
+.footer .container .logo .social-icon {
+  width: 28px;
+  height: 28px;
+  color: #00ff41; /* 형광 초록색 */
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 65, 0.5));
+}
+
+.footer .container .logo .icon-button:hover .social-icon {
+  color: #00ff41;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 65, 0.8));
+  transform: scale(1.1);
+}
+
+/* 각 아이콘별 특별 효과 */
+.footer .container .logo .github-button:hover .github-icon {
+  color: #00ff41;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 65, 0.9));
+}
+
+.footer .container .logo .tistory-button:hover .tistory-icon {
+  color: #8a2be2;
+  filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.8));
+}
+
+.footer .container .logo .instagram-button:hover .instagram-icon {
+  color: #ff006e;
+  filter: drop-shadow(0 0 15px rgba(255, 0, 110, 0.8));
+}
+
