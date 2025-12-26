@@ -155,16 +155,16 @@ const ChatGPT = () => {
                         {(chatHistory.length === 0) && (
                             <div className="messagebot">
                                 <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-                                    <div style={{ marginTop: '20px', color: '#00ff41', minHeight: '24px', width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
+                                    <div style={{ marginTop: '20px', color: '#ffffff', minHeight: '24px', width: '100%', position: 'relative', display: 'flex', justifyContent: 'center' }}>
                                         <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-                                            <span style={{ marginRight: '5px', flexShrink: 0 }}>&gt;</span>
+                                            <span style={{ marginRight: '5px', flexShrink: 0, color: '#ffffff' }}>&gt;</span>
                                             <span>
                                                 {typingText}
                                                 <span className="typing-cursor">|</span>
                                             </span>
                                         </div>
                                     </div>
-                                    <div style={{ marginTop: '10px', fontSize: '12px', opacity: 0.6, color: '#00ff41', position: 'relative', width: '100%', textAlign: 'center' }}>Type your question and press ENTER...</div>
+                                    <div style={{ marginTop: '10px', fontSize: '12px', opacity: 0.6, color: '#ffffff', position: 'relative', width: '100%', textAlign: 'center' }}>Type your question and press ENTER...</div>
                                 </div>
                             </div>
                         )}
