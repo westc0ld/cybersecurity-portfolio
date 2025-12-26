@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
-import Loading from './loading';
 
 const ChatGPT = () => {
     const [inputValue, setInputValue] = useState('');
@@ -142,15 +141,15 @@ const ChatGPT = () => {
                         <div className="monitor-led"></div>
                     {isLoading && (
                             <div className="loading-overlay">
-                            <Loading />
                             <div className='ment'>&gt; SYSTEM ANALYZING... PLEASE WAIT</div>
                         </div>
                     )}
                     <div className="chat-history" ref={chatHistoryRef}>
                         {chatHistory.map((message, index) => {
                             const isError = message.text?.startsWith('[ERROR]');
+                            const isFalse = message.text?.toLowerCase().includes('false') && message.sender === 'bot';
                             return (
-                                <div key={index} className={`message ${message.sender} ${isError ? 'error-message' : ''}`}>
+                                <div key={index} className={`message ${message.sender} ${isError || isFalse ? 'error-message' : ''}`}>
                                     {message.text}
                                 </div>
                             );
@@ -188,7 +187,7 @@ const ChatGPT = () => {
                     </div>
                 </div>
                 <div className="warning">
-                    * WARNING: 최대 10개의 쿼리만 허용됩니다<br />
+                    * WARNING: 최대 10개의 질문문만 허용됩니다<br />
                     * SECURITY ALERT: 관련 없는 질문에 대한 false 응답이 3회 발생 시 세션이 종료됩니다
                 </div>
             </div>
