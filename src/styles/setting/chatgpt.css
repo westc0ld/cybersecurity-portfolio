@@ -718,10 +718,10 @@
   
   .loading-overlay {
     position: absolute;
-    top: 28px; /* 상단 베젤 높이만큼 내림 */
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 70px; /* 입력 박스 높이만큼 여유 공간 확보 */
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -730,12 +730,12 @@
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     z-index: 10;
-    border: none; /* 테두리 제거 */
+    border: 2px solid #00ff41;
   }
   
   .ment {
     font-weight: bold;
-    padding-top: 0; /* 중간 높이에 위치하도록 */
+    padding-top: 30px;
     color: #00ff41; /* 형광 초록색 */
     font-family: 'JetBrains Mono', 'Courier New', monospace;
     text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);

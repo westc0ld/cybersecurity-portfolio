@@ -187,7 +187,7 @@ const ChatGPT = () => {
                     </div>
                 </div>
                 <div className="warning">
-                    * WARNING: 최대 10개의 질문문만 허용됩니다<br />
+                    * WARNING: 최대 10개의 질문만 허용됩니다<br />
                     * SECURITY ALERT: 관련 없는 질문에 대한 false 응답이 3회 발생 시 세션이 종료됩니다
                 </div>
             </div>

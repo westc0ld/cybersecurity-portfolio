@@ -110,8 +110,9 @@ const TerminalBackground = () => {
             style={{
                 position: 'fixed',
                 top: 0,
-                left: 0,
-                width: '100%',
+                left: -30,
+                right: 0,
+                width: '110%',
                 height: '100%',
                 zIndex: 0,
                 pointerEvents: 'none',
