@@ -74,13 +74,17 @@ const ChatGPT = () => {
         setChatHistory(prevChat => [...prevChat, { text: userMessage, sender: 'user' }]);
         
         try {
-            // API URL을 환경 변수로 관리 (로컬 개발: http://localhost:5000, 프로덕션: https://api.westcold0035.com)
-            const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-            const response = await axios.post(`${API_URL}/sendMessage`, {
+            const response = await axios.post('https://api.westcold0035.com/sendMessage', {
                 user_input: userMessage
             });
             
-            const botResponse = response.data.description || '응답을 받을 수 없습니다.';
+            let botResponse = response.data.description || '응답을 받을 수 없습니다.';
+            
+            // 【】 형식의 불필요한 텍스트 제거
+            botResponse = botResponse.replace(/【[^】]*】/g, '');
+            // 연속된 마침표를 하나로 정리 (예: ". ." -> ".")
+            botResponse = botResponse.replace(/\s*\.+\s*$/, '.');
+            
             setResponseMessage(botResponse);
             
             // 봇 응답을 채팅 히스토리에 추가
