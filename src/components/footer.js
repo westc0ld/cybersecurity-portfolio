@@ -11,7 +11,7 @@ export default function Footer() {
                         <div className="copy">© 2024. West Cold. All rights reserved.</div>
                         <div className="logo">
                             <button 
-                                onClick={() => window.open('https://github.com/westc0ld/portpolio-practice.git/', '_blank')}
+                                onClick={() => window.open('https://github.com/westc0ld/', '_blank')}
                                 className="icon-button github-button"
                                 aria-label="GitHub"
                             >
